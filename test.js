@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+  //gestion dark/light mode
+  let targetDarkmode = document.querySelector(".darkMode");
+  targetDarkmode.addEventListener("click", () => {
+    let colorTheme = document.body;
+    let currentTheme = colorTheme.getAttribute("data-bs-theme");
+    if (currentTheme == "light") {
+      colorTheme.setAttribute("data-bs-theme", "dark");
+    } else {
+      colorTheme.setAttribute("data-bs-theme", "light");
+    }
+  });
   let InputNbEntier = document.querySelector("#nbEntierInput");
   let target = document.querySelector("#nbEntier");
   function nbEntiers(n) {
@@ -39,13 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
       cellule.textContent = i;
     }
   }
-
   addTable.addEventListener("click", () => {
     targetAdd.insertAdjacentElement("afterend", table);
   });
-
-// Fonction de recherche dans le tableau
-  
+  // Fonction de recherche dans le tableau
   function findMe(array, target) {
     for (let i = 0; i < array.length; i++) {
       if (array[i] === target) {
@@ -54,19 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return -1;
   }
-
   let arrayResearch = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
   targetAdd.addEventListener("click", () => {
     let targetElement = parseInt(valueTarget.value);
     let position = findMe(arrayResearch, targetElement);
-
     if (position !== -1) {
       alert(
-        "L'élément " +
-          targetElement +
-          " a été trouvé a la position " +
-          position
+        "L'élément " + targetElement + " a été trouvé a la position " + position
       );
     } else {
       alert(
@@ -74,4 +76,22 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
   });
+
+  let addReverse = document.querySelector('.addReverse');
+  addReverse.addEventListener('click', ()=> {
+    let inputReverse = document.querySelector('.inputReverse')
+    let valueReverse = inputReverse.value
+    let resultReverse = reverseMe(valueReverse);
+    alert("Votre texte inversé est " + resultReverse )
+  })
+
+  function reverseMe(string) {
+    let reverseString = "";
+    for (let i = string.length -1; i >= 0; i--) {
+      reverseString += string[i]
+       }
+       return reverseString;
+  }
+
+
 });
