@@ -3,13 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   let targetDarkmode = document.querySelector(".darkMode");
   targetDarkmode.addEventListener("click", () => {
     let colorTheme = document.body;
+    
     let currentTheme = colorTheme.getAttribute("data-bs-theme");
     if (currentTheme == "light") {
+      targetDarkmode.textContent = "Light"
       colorTheme.setAttribute("data-bs-theme", "dark");
     } else {
+      targetDarkmode.textContent = "Dark"
       colorTheme.setAttribute("data-bs-theme", "light");
     }
   });
+
+  //Exo 1 Nombre entier
   let InputNbEntier = document.querySelector("#nbEntierInput");
   let target = document.querySelector("#nbEntier");
   function nbEntiers(n) {
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 
-  // Creation de la table exo 2
+  // Exo 2
 
   let addTable = document.querySelector(".addTable");
   let targetAdd = document.querySelector(".findNumber");
@@ -51,7 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   addTable.addEventListener("click", () => {
-    targetAdd.insertAdjacentElement("afterend", table);
+    if (addTable.textContent === "Afficher tableau") {
+      addTable.textContent = "Fermer tableau";
+      targetAdd.insertAdjacentElement("afterend", table);
+    } else {
+      addTable.textContent = "Afficher tableau";
+      let destroyTable = document.querySelector("table");
+      destroyTable.remove();
+    }
   });
   // Fonction de recherche dans le tableau
   function findMe(array, target) {
@@ -76,22 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
   });
-
-  let addReverse = document.querySelector('.addReverse');
-  addReverse.addEventListener('click', ()=> {
-    let inputReverse = document.querySelector('.inputReverse')
-    let valueReverse = inputReverse.value
+  // Exo 3 Mots Inversé
+  let addReverse = document.querySelector(".addReverse");
+  addReverse.addEventListener("click", () => {
+    let inputReverse = document.querySelector(".inputReverse");
+    let valueReverse = inputReverse.value;
     let resultReverse = reverseMe(valueReverse);
-    alert("Votre texte inversé est " + resultReverse )
-  })
+    alert("Votre texte inversé est " + resultReverse);
+  });
 
   function reverseMe(string) {
     let reverseString = "";
-    for (let i = string.length -1; i >= 0; i--) {
-      reverseString += string[i]
-       }
-       return reverseString;
+    for (let i = string.length - 1; i >= 0; i--) {
+      reverseString += string[i];
+    }
+    return reverseString;
   }
-
-
 });

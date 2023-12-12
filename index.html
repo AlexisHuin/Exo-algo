@@ -19,9 +19,9 @@
     <title>test</title>
   </head>
   <body data-bs-theme="light">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-primary bg-gradient fs-3 text">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Test Algo</a>
+        <a class="navbar-brand fs-1 text" href="#">Test Algo</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -51,28 +51,40 @@
               >
             </li>
           </ul>
-          <button class="darkMode">Theme</button>
+          <button class="darkMode btn btn-light">Dark</button>
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="main container">
       <div class="block bg-secondary-subtle mt-4 rounded mx-auto p-2">
         <h1>Nombre entier</h1>
         <p>Calcule d'un nombre entier</p>
         <p>Exemple pour le chiffre 3, 1+2+3=6</p>
-        <input id="nbEntierInput" type="text" placeholder="Choisi un chiffre" />
-        <button id="nbEntier">Calcule nbEntier</button>
+        <div class="mt-4">
+          <input
+            id="nbEntierInput"
+            type="text"
+            placeholder="Choisi un chiffre"
+          />
+          <button id="nbEntier">Calcule nbEntier</button>
+        </div>
       </div>
       <div class="block bg-secondary-subtle rounded mx-auto p-2 mt-4">
         <h1 class="mt-4">Tableau trié</h1>
-        <button class="addTable">afficher tableau</button>
-        <input type="text" class="inputArray" placeholder="Quel chiffre ?" />
-        <button class="findNumber">Rechercher</button>
+        <p>Algo pour retrouvé un chiffre et sa position dans un tableau</p>
+        <div class="mt-4">
+          <button class="addTable">Afficher tableau</button>
+          <input type="text" class="inputArray" placeholder="Quel chiffre ?" />
+          <button class="findNumber">Rechercher</button>
+        </div>
       </div>
       <div class="block bg-secondary-subtle rounded mx-auto p-2 mt-4">
-      <h1 class="mt-4">Mots inversés</h1>
-        <input type="text" class="inputReverse" placeholder="Mots" />
-         <button class="addReverse">Valider</button>
+        <h1 class="mt-4">Mots inversés</h1>
+        <p> Algo pour inversé un mot ou une phrase</p>
+        <div class="mt-4">
+          <input type="text" class="inputReverse" placeholder="Mots" />
+          <button class="addReverse">Valider</button>
+        </div>
       </div>
     </div>
   </body>
