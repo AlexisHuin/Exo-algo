@@ -1,2 +1,2 @@
-# Excercice d'algos basique
+# Excercice d'algo basique
 
